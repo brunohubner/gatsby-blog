@@ -1,4 +1,4 @@
-const links = [
+export default [
     {
         label: "Github",
         url: `https://github.com/brunohubner`
