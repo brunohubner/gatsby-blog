@@ -1,8 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
-// import * as S from "./styled"
+import * as S from "./styles"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
 
 export default function Avatar({ children }) {
     const { avatarImage } = useStaticQuery(graphql`
@@ -17,7 +16,7 @@ export default function Avatar({ children }) {
         }
     `)
 
-    return <Img fixed={avatarImage.childImageSharp.fixed} />
+    return <S.AvatarWrapper fixed={avatarImage.childImageSharp.fixed} />
 }
 
 Avatar.propTypes = {
