@@ -2,19 +2,27 @@ import React from "react"
 import PropTypes from "prop-types"
 import * as S from "./styles"
 
-export default function PostItem({ children }) {
+export default function PostItem({
+    slug,
+    background,
+    category,
+    date,
+    timeToRead,
+    title,
+    description
+}) {
     return (
-        <S.PostItemLink>
+        <S.PostItemLink to={slug}>
             <S.PostItemWrapper>
-                <S.PostItemTag background="#47650b">Misc</S.PostItemTag>
+                <S.PostItemTag background={background}>
+                    {category}
+                </S.PostItemTag>
                 <S.PostItemInfo>
                     <S.PostItemDate>
-                        27 de Março de 2022 • 4 min de leitura
+                        {date} • {timeToRead} min de leitura
                     </S.PostItemDate>
-                    <S.PostItemTitle>
-                        Algumas razões para você ter sua própria plataforma ao
-                        invés de soluções como o Medium.
-                    </S.PostItemTitle>
+                    <S.PostItemTitle>{title} </S.PostItemTitle>
+                    <S.PostItemDescription>{description}</S.PostItemDescription>
                 </S.PostItemInfo>
             </S.PostItemWrapper>
         </S.PostItemLink>
@@ -22,5 +30,11 @@ export default function PostItem({ children }) {
 }
 
 PostItem.propTypes = {
-    children: PropTypes.node.isRequired
+    slug: PropTypes.string.isRequired,
+    background: PropTypes.string,
+    category: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    timeToRead: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired
 }

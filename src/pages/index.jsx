@@ -7,22 +7,14 @@ export default function IndexPage() {
     return (
         <Layout>
             <SEO title="Home" />
-            <PostItem />
-            <PostItem />
-            <PostItem />
-            <PostItem />
-            <PostItem />
-            <PostItem />
-            <PostItem />
-            <PostItem />
-            <PostItem />
-            <PostItem />
-            <PostItem />
-            <PostItem />
-            <PostItem />
-            <PostItem />
-            <PostItem />
-            <PostItem />
+            <PostItem
+                slug="/about/"
+                category="Misc"
+                date="27 de Março de 2022"
+                timeToRead="5"
+                title="Diga não ao Medium: tenha sua própria plataforma"
+                description="Algumas razões para você ter sua própria plataforma ao invés de soluções como o Medium."
+            />
         </Layout>
     )
 }
