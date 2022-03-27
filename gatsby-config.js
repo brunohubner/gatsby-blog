@@ -2,6 +2,7 @@ module.exports = {
     siteMetadata: {
         title: `Blog Gatsby - Bruno Hubner`,
         description: `Blog Post desenvolvido com Gatsby.`,
+        position: `Full Stack Developer`,
         author: `Bruno Hubner`
     },
     plugins: [

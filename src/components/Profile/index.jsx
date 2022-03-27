@@ -1,13 +1,30 @@
 import React from "react"
 import PropTypes from "prop-types"
 // import * as S from "./styled"
+import { useStaticQuery, graphql } from "gatsby"
 
 export default function Profile({ children }) {
+    const {
+        site: {
+            siteMetadata: { author, position, description }
+        }
+    } = useStaticQuery(graphql`
+        query SiteMetadata {
+            site {
+                siteMetadata {
+                    author
+                    position
+                    description
+                }
+            }
+        }
+    `)
+
     return (
         <div className="Profile-wrapper">
-            <h1>Bruno Hubner</h1>
-            <h2>Full Stack Developer</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <h1>{author}</h1>
+            <h2>{position}</h2>
+            <p>{description}</p>
         </div>
     )
 }
