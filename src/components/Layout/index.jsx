@@ -4,6 +4,7 @@ import Profile from "../Profile"
 import * as S from "./styles"
 import GlobalStyles from "../../styles/GlobalStyles"
 import Sidebar from "../Sidebar"
+import MenuBar from "../Menubar"
 
 export default function Layout({ children }) {
     return (
@@ -11,6 +12,7 @@ export default function Layout({ children }) {
             <GlobalStyles />
             <Sidebar />
             <S.LayoutMain>{children}</S.LayoutMain>
+            <MenuBar />
         </S.LayoutWrapper>
     )
 }
