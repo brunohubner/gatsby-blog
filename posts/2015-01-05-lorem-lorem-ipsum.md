@@ -1,4 +1,3 @@
-2015-01-05-lorem-lorem-ipsum.md
 ---
 date: 2015-01-05 05:54:23
 title: Lorem lorem ipsum
