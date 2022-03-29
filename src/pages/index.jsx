@@ -20,6 +20,9 @@ export default function IndexPage() {
                             description
                             title
                         }
+                        fields {
+                            slug
+                        }
                         timeToRead
                     }
                 }
@@ -41,11 +44,12 @@ export default function IndexPage() {
                             description,
                             title
                         },
+                        fields: { slug },
                         timeToRead
                     }
                 }) => (
                     <PostItem
-                        slug="/about/"
+                        slug={slug}
                         background={background}
                         category={category}
                         date={date}
