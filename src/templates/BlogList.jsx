@@ -2,37 +2,39 @@ import React from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import PostItem from "../components/PostItem"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
-export default function IndexPage() {
-    const { allMarkdownRemark } = useStaticQuery(graphql`
-        query PostList {
-            allMarkdownRemark(
-                sort: { fields: frontmatter___date, order: DESC }
-            ) {
-                edges {
-                    node {
-                        frontmatter {
-                            background
-                            category
-                            date(
-                                locale: "pt-br"
-                                formatString: "DD [de] MMMM [de] YYYY"
-                            )
-                            description
-                            title
-                        }
-                        fields {
-                            slug
-                        }
-                        timeToRead
+export const query = graphql`
+    query PostList($skip: Int!, $limit: Int!) {
+        allMarkdownRemark(
+            sort: { fields: frontmatter___date, order: DESC }
+            limit: $limit
+            skip: $skip
+        ) {
+            edges {
+                node {
+                    fields {
+                        slug
                     }
+                    frontmatter {
+                        background
+                        category
+                        date(
+                            locale: "pt-br"
+                            formatString: "DD [de] MMMM [de] YYYY"
+                        )
+                        description
+                        title
+                    }
+                    timeToRead
                 }
             }
         }
-    `)
-    const postList = allMarkdownRemark.edges
+    }
+`
 
+export default function BlogList(props) {
+    const postList = props.data.allMarkdownRemark.edges
     return (
         <Layout>
             <SEO title="Home" />
@@ -46,8 +48,8 @@ export default function IndexPage() {
                             description,
                             title
                         },
-                        fields: { slug },
-                        timeToRead
+                        timeToRead,
+                        fields: { slug }
                     }
                 }) => (
                     <PostItem
