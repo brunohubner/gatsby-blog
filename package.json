@@ -31,5 +31,8 @@
     "devDependencies": {
         "prettier": "^1.18.2"
     },
-    "license": "MIT"
+    "license": "MIT",
+    "engines": {
+        "node": "12.22.11"
+    }
 }
