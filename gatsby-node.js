@@ -26,12 +26,25 @@ exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions
     return graphql(`
         {
-            allMarkdownRemark {
+            allMarkdownRemark(
+                sort: { fields: frontmatter___date, order: DESC }
+            ) {
                 edges {
                     node {
                         fields {
                             slug
                         }
+                        frontmatter {
+                            background
+                            category
+                            date(
+                                locale: "pt-br"
+                                formatString: "DD [de] MMMM [de] YYYY"
+                            )
+                            description
+                            title
+                        }
+                        timeToRead
                     }
                 }
             }
