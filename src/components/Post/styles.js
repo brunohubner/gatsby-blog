@@ -150,7 +150,6 @@ export const MainContent = styled.section`
 
     .gatsby-resp-image-image {
         box-shadow: none !important;
-        transition: opacity 0.2s;
 
         &.lazyload {
             opacity: 0;
@@ -174,7 +173,6 @@ export const MainContent = styled.section`
         border-bottom: 1px dashed #1fa1f2;
         color: #1fa1f2;
         text-decoration: none;
-        transition: opacity 0.5s;
 
         svg {
             color: #fff;

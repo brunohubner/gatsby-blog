@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import * as S from "../components/Post/styles"
+import RecomendedPosts from "../components/RecomendedPosts"
 
 export const query = graphql`
     query Post($slug: String) {
@@ -18,8 +19,10 @@ export const query = graphql`
     }
 `
 
-export default function BlogPost({ data }) {
+export default function BlogPost({ data, pageContext }) {
     const post = data.markdownRemark
+    const next = pageContext.nextPost
+    const previous = pageContext.previousPost
 
     return (
         <Layout>
@@ -37,6 +40,7 @@ export default function BlogPost({ data }) {
             <S.MainContent>
                 <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
             </S.MainContent>
+            <RecomendedPosts next={next} previous={previous} />
         </Layout>
     )
 }
