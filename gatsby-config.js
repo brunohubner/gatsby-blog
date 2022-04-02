@@ -1,3 +1,6 @@
+const queries = require("./src/search/algoliaQueries")
+const env = require("./env")
+
 module.exports = {
     siteMetadata: {
         title: `Blog Gatsby - Bruno Hubner`,
@@ -54,6 +57,17 @@ module.exports = {
         },
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
+        {
+            resolve: `gatsby-plugin-algolia-search`,
+            options: {
+                appId: env.ALGOLIA_APP_ID,
+                apiKey: env.ALGOLIA_ADMIN_KEY,
+                indexName: env.ALGOLIA_INDEX_NAME,
+                queries,
+                chunkSize: 10000, // default: 1000
+                enablePartialUpdates: true
+            }
+        },
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
