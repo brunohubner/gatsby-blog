@@ -1,9 +1,8 @@
 import React from "react"
-import PropTypes from "prop-types"
 import * as S from "./styles"
 import links from "./links"
 
-export default function MenuLinks({ children }) {
+export default function MenuLinks() {
     return (
         <S.MenuLinksWrapper>
             <S.MenuLinksList>
@@ -17,8 +16,4 @@ export default function MenuLinks({ children }) {
             </S.MenuLinksList>
         </S.MenuLinksWrapper>
     )
-}
-
-MenuLinks.propTypes = {
-    children: PropTypes.node.isRequired
 }

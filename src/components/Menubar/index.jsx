@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 import * as S from "./styles"
 import { Grid } from "styled-icons/boxicons-solid/Grid"
 import { Home } from "styled-icons/boxicons-solid/Home"
@@ -7,7 +6,7 @@ import { SearchAlt2 as Search } from "styled-icons/boxicons-regular/SearchAlt2"
 import { UpArrowAlt as Arrow } from "styled-icons/boxicons-regular/UpArrowAlt"
 import { LightbulbOutline as Light } from "styled-icons/material/LightbulbOutline"
 
-export default function MenuBar({ children }) {
+export default function MenuBar() {
     return (
         <S.MenuBarWrapper>
             <S.MenuBarGroup>
@@ -35,8 +34,4 @@ export default function MenuBar({ children }) {
             </S.MenuBarGroup>
         </S.MenuBarWrapper>
     )
-}
-
-MenuBar.propTypes = {
-    children: PropTypes.node.isRequired
 }

@@ -60,6 +60,7 @@ export default function BlogList(props) {
                     }
                 }) => (
                     <PostItem
+                        key={slug}
                         slug={slug}
                         background={background}
                         category={category}

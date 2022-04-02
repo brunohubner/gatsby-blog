@@ -1,10 +1,9 @@
 import React from "react"
-import PropTypes from "prop-types"
 import * as S from "./styles"
 import { useStaticQuery, graphql } from "gatsby"
 import Avatar from "../Avatar"
 
-export default function Profile({ children }) {
+export default function Profile() {
     const {
         site: {
             siteMetadata: { author, position, description }
@@ -23,7 +22,7 @@ export default function Profile({ children }) {
 
     return (
         <S.ProfileWrapper>
-            <S.ProfileLink>
+            <S.ProfileLink to="/">
                 <Avatar />
                 <S.ProfileAuthor>
                     {author}
@@ -33,8 +32,4 @@ export default function Profile({ children }) {
             <S.ProfileDescription>{description}</S.ProfileDescription>
         </S.ProfileWrapper>
     )
-}
-
-Profile.propTypes = {
-    children: PropTypes.node.isRequired
 }

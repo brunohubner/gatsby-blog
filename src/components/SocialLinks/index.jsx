@@ -1,10 +1,9 @@
 import React from "react"
-import PropTypes from "prop-types"
 import * as S from "./styles"
 import links from "./links"
 import icons from "./icons"
 
-export default function SocialLinks({ children }) {
+export default function SocialLinks() {
     return (
         <S.SocialLinksWrapper>
             <S.SocialLinksList>
@@ -28,8 +27,4 @@ export default function SocialLinks({ children }) {
             </S.SocialLinksList>
         </S.SocialLinksWrapper>
     )
-}
-
-SocialLinks.propTypes = {
-    children: PropTypes.node.isRequired
 }

@@ -23,7 +23,7 @@ export default function RecomendedPosts({ next, previous }) {
 }
 
 RecomendedPosts.propTypes = {
-    next: PropTypes.shape({
+    previous: PropTypes.shape({
         frontmatter: PropTypes.shape({
             title: PropTypes.string.isRequired
         }),

@@ -1,11 +1,10 @@
 import React from "react"
-import PropTypes from "prop-types"
 import * as S from "./styles"
 import Profile from "../Profile"
 import SocialLinks from "../SocialLinks"
 import MenuLinks from "../MenuLinks"
 
-export default function Sidebar({ children }) {
+export default function Sidebar() {
     return (
         <S.SidebarWrapper>
             <Profile />
@@ -13,8 +12,4 @@ export default function Sidebar({ children }) {
             <MenuLinks />
         </S.SidebarWrapper>
     )
-}
-
-Sidebar.propTypes = {
-    children: PropTypes.node.isRequired
 }

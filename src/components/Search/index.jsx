@@ -1,7 +1,5 @@
 import React from "react"
-import PropTypes from "prop-types"
 import * as S from "./styles"
-import algoliasearch from "algoliasearch/lite"
 import { InstantSearch, SearchBox, Hits, Stats } from "react-instantsearch-dom"
 import Hit from "./Hit"
 
@@ -11,7 +9,7 @@ const algolia = {
     indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME
 }
 
-export default function Search({ children }) {
+export default function Search() {
     return (
         <S.SearchWrapper>
             <InstantSearch
@@ -34,8 +32,4 @@ export default function Search({ children }) {
             </InstantSearch>
         </S.SearchWrapper>
     )
-}
-
-Search.propTypes = {
-    children: PropTypes.node.isRequired
 }
