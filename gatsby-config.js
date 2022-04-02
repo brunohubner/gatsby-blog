@@ -1,5 +1,5 @@
+require("dotenv").config()
 const queries = require("./src/search/algoliaQueries")
-const env = require("./env")
 
 module.exports = {
     siteMetadata: {
@@ -60,9 +60,9 @@ module.exports = {
         {
             resolve: `gatsby-plugin-algolia-search`,
             options: {
-                appId: env.ALGOLIA_APP_ID,
-                apiKey: env.ALGOLIA_ADMIN_KEY,
-                indexName: env.ALGOLIA_INDEX_NAME,
+                appId: process.env.ALGOLIA_APP_ID,
+                apiKey: process.env.ALGOLIA_ADMIN_KEY,
+                indexName: process.env.ALGOLIA_INDEX_NAME,
                 queries,
                 chunkSize: 10000, // default: 1000
                 enablePartialUpdates: true

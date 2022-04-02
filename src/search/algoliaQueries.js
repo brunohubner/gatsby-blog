@@ -1,4 +1,3 @@
-const env = require("../../env")
 const jsTimestampToUnixTimestamp = require("../utils/jsTimestampToUnixTimestamp")
 
 const postQuery = `{
@@ -36,7 +35,7 @@ module.exports = [
     {
         query: postQuery,
         transformer: ({ data }) => flatten(data.posts.edges),
-        indexName: env.ALGOLIA_INDEX_NAME,
+        indexName: process.env.ALGOLIA_INDEX_NAME,
         settings
     }
 ]
