@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import * as S from "./styles"
+import getThemeColor from "../../utils/getThemeColor"
 
 export default function PostItem({
     slug,
@@ -16,7 +17,7 @@ export default function PostItem({
             to={slug}
             cover="true"
             direction="right"
-            bg="#16202c"
+            bg={getThemeColor()}
             duration={0.6}
         >
             <S.PostItemWrapper>

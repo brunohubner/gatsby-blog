@@ -1,6 +1,7 @@
 import React from "react"
 import * as S from "./styles"
 import links from "./links"
+import getThemeColor from "../../utils/getThemeColor"
 
 export default function MenuLinks() {
     return (
@@ -11,7 +12,7 @@ export default function MenuLinks() {
                         <S.MenuLinksLink
                             cover="true"
                             direction="left"
-                            bg="#16202c"
+                            bg={getThemeColor()}
                             duration={0.6}
                             to={link.url}
                             activeClassName="active"

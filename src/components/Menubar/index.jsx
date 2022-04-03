@@ -6,6 +6,7 @@ import { SearchAlt2 as Search } from "styled-icons/boxicons-regular/SearchAlt2"
 import { UpArrowAlt as Arrow } from "styled-icons/boxicons-regular/UpArrowAlt"
 import { LightbulbOutline as Light } from "styled-icons/material/LightbulbOutline"
 import { ThList as List } from "styled-icons/typicons/ThList"
+import getThemeColor from "../../utils/getThemeColor"
 
 export default function MenuBar() {
     const [theme, setTheme] = useState(null)
@@ -30,7 +31,7 @@ export default function MenuBar() {
                     title="Voltar para Home"
                     cover="true"
                     direction="right"
-                    bg="#16202c"
+                    bg={getThemeColor()}
                     duration={0.6}
                 >
                     <S.MenuBarItem>
@@ -41,7 +42,7 @@ export default function MenuBar() {
                     to="/search/"
                     cover="true"
                     direction="right"
-                    bg="#16202c"
+                    bg={getThemeColor()}
                     duration={0.6}
                     title="Pesquisar"
                 >
