@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import * as S from "./styles"
 import { Grid } from "styled-icons/boxicons-solid/Grid"
 import { Home } from "styled-icons/boxicons-solid/Home"
@@ -7,6 +7,14 @@ import { UpArrowAlt as Arrow } from "styled-icons/boxicons-regular/UpArrowAlt"
 import { LightbulbOutline as Light } from "styled-icons/material/LightbulbOutline"
 
 export default function MenuBar() {
+    const [theme, setTheme] = useState(null)
+    const isDarkMode = theme === "dark"
+
+    useEffect(() => {
+        setTheme(window.__theme)
+        window.__onThemeChange = () => setTheme(window.__theme)
+    }, [])
+
     return (
         <S.MenuBarWrapper>
             <S.MenuBarGroup>
@@ -22,7 +30,15 @@ export default function MenuBar() {
                 </S.MenuBarLink>
             </S.MenuBarGroup>
             <S.MenuBarGroup>
-                <S.MenuBarItem title="Mudar o tema">
+                <S.MenuBarItem
+                    title="Mudar o tema"
+                    onClick={() => {
+                        window.__setPreferredTheme(
+                            isDarkMode ? "light" : "dark"
+                        )
+                    }}
+                    className={theme}
+                >
                     <Light />
                 </S.MenuBarItem>
                 <S.MenuBarItem title="Mudar visualização">
