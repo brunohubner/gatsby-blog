@@ -78,7 +78,7 @@ export default function BlogList(props) {
                 isFirst={isFirst}
                 isLast={isLast}
                 currentPage={currentPage}
-                nextpage={nextPage}
+                nextPage={nextPage}
                 prevPage={prevPage}
                 numPages={numPages}
             />
