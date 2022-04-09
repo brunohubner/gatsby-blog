@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: willianjusten/gatsby-course
+  repo: brunohubner/gatsby-blog
   branch: master
   site_domain: gatsby-course-will.netlify.com
 
