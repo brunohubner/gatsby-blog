@@ -2,7 +2,7 @@ backend:
   name: github
   repo: brunohubner/gatsby-blog
   branch: master
-  site_domain: gatsby-course-will.netlify.com
+  site_domain: brunohubner-gatsby-blog.netlify.app
 
 publish_mode: editorial_workflow
 media_folder: "static/assets/img"
