@@ -40,7 +40,7 @@ module.exports = {
             options: {
                 plugins: [
                     {
-                        resolve: "gatsby-remark-relative-images",
+                        resolve: "gatsby-remark-relative-images-v2",
                         options: {
                             name: "uploads"
                         }
@@ -57,6 +57,7 @@ module.exports = {
                 ]
             }
         },
+        `gatsby-plugin-image`,
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         {
@@ -79,7 +80,7 @@ module.exports = {
                 background_color: `#16202c`,
                 theme_color: `#16202c`,
                 display: `minimal-ui`,
-                icon: `assets/img/gatsby-icon.png` // This path is relative to the root of the site.
+                icon: `static/assets/img/gatsby-icon.png` // This path is relative to the root of the site.
             }
         },
         `gatsby-plugin-sitemap`,
