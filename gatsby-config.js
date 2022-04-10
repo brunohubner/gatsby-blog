@@ -4,7 +4,7 @@ const queries = require("./src/search/algoliaQueries")
 module.exports = {
     siteMetadata: {
         title: `Gatsby Blog - Bruno Hubner`,
-        description: `Blog Post desenvolvido com Gatsby e React por Bruno Hubner`,
+        description: `Blog Post desenvolvido com Gatsby`,
         position: `Full Stack Developer`,
         author: `Bruno Hubner`,
         siteUrl: `https://brunohubner-gatsby-blog.netlify.app`
